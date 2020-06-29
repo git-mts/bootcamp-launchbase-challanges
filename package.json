@@ -1,0 +1,27 @@
+{
+  "name": "bootcamp-launchbase-challanges",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theuzlucas/bootcamp-launchbase-challanges.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theuzlucas/bootcamp-launchbase-challanges/issues"
+  },
+  "homepage": "https://github.com/theuzlucas/bootcamp-launchbase-challanges#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "nunjucks": "^3.2.1"
+  }
+}
