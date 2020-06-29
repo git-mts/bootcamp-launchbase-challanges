@@ -9,6 +9,7 @@
 
 body { background-color: #FFF; font-family: 'Roboto', sans-serif; }
 
+/* Cabeçalho das paginas */
 header {
   color: #FFF;
   padding: 30px;
@@ -16,6 +17,9 @@ header {
   text-align: center;
 
   background-color: var(--rocket-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .links a + a {
@@ -44,25 +48,13 @@ nav.links a { width: 120px; }
   font-weight: 700;
 }
 
-header .container { display: flex; justify-content: center; }
+/* Pagina Sobre */
+.content-header .container { text-align: center; }
+.content-header img { width: 200px; border-radius: 50%; border: 5px solid #a4a4a4}
+.content-header h1 { color: var(--rocket-color); font-weight: 700; font-size: 38px; line-height: 48px; margin: 20px 0; }
 
-header .container img { width: 75px; margin-right: 30px; }
 
-header .container h1 {
-  display: flex;
-
-  font-size: 38px;
-
-  padding-left: 20px;
-
-  align-items: center;
-
-  border-left: 1px solid #FFF;
-}
-
-.content { padding: 32px; background-color: #FFF;}
-
-.content article { text-align: center; }
+.content { padding: 32px; background-color: #FFF; text-align: center; margin-bottom: 50px;}
 
 .content h2, h3 {
   font-size: 24px;
@@ -70,13 +62,13 @@ header .container h1 {
 
   color: var(--rocket-color);
 
-  font-weight: 700;
+  font-weight: 400;
 }
 
-.content p {
-  margin: 30px auto;
+.content article { max-width: 600px; margin: 50px auto; }
 
-  max-width: 500px;
+.content p {
+  margin-top: 24px;
 
   color: #777;
   font-size: 18px;
@@ -93,5 +85,97 @@ header .container h1 {
 
 .technologies li:hover { font-weight: 700; border-bottom: 1px solid var(--rocket-color); }
 
-footer { text-align: center; padding: 32px; background-color: var(--rocket-color); }
+/* pagina de conteudos */
 
+.content h1 { color: var(--rocket-color); font-size: 42px; line-height: 52px; margin-bottom: 32px;}
+
+.cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; width: 100%; }
+
+.card {
+  background-color: var(--primary-color);
+  text-align: center;
+
+  border-radius: 16px;
+  padding: 32px;
+
+  cursor: pointer;
+}
+
+.card:hover {
+  transition: transform 200ms;
+
+  border: 5px solid var(--rocket-color);
+  transform: translateY(-20px);
+}
+
+.card__content h2 {
+  margin-top: 20px;
+  color: #c3c3c3
+}
+
+.card__content p {
+  font-size: 18px;
+  line-height: 28px;
+  color: #cecece;
+}
+
+.card__info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card__info p {color: #FFF; padding: 0; font-size: 16px;}
+.card__price { 
+  display: flex;
+  align-items: center;
+}
+.card__price span {
+  background-color: var(--rocket-color);
+
+  line-height: 12px;
+
+  padding: 8px 16px;
+  border-radius: 16px;
+  font-size: 12px;
+}
+
+footer {text-align: center; padding: 32px; background-color: var(--rocket-color);  width: 100%; }
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.6);
+  
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+
+  animation: modal 500ms ease-in-out;
+}
+
+@keyframes modal {
+  from { width: 0; height: 0; }
+}
+
+.modal-overlay.maximize { display: initial; }
+
+.modal {
+  background: #FFF;
+  width: 90%;
+  height: 90%;
+  margin: 5vh auto;
+  border-radius: 16px;
+
+  position: relative;
+}
+
+.close-modal {
+  cursor: pointer;
+
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+iframe {width: 100%; position: absolute; height: 90%; top: 5vh;}
