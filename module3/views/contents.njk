@@ -7,7 +7,7 @@
     <div class="cards">
 
       {% for course in courses %}
-      <div class="card" id="{{ course.id }}">
+      <div class="card" id="{{ course.id }}" style="border-color: {{ course.color }}">
 
         <div class="card__logo-container">
           <img src="{{ course.logo_url }}" alt="">
@@ -30,17 +30,7 @@
       
     </div>
   </section>
-
-  <div class="modal-overlay">
-    <div class="modal">
-      <div class="close-modal">
-        <i class="material-icons">close</i>
-      </div>
-
-      <iframe frameborder="0"></iframe>
-    </div>
-  </div>
-
+  
   <script src="script.js"></script>
 
 {% endblock content %}
