@@ -1,0 +1,28 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <section class="content">
+
+    <div class="content-header">
+      <div class="container">
+        <img src="{{ data.image_url }}" alt="">
+        <h1>{{ data.name }}</h1>
+      </div>
+    </div>
+
+    <article>
+      <h2>{{ data.title }}</h2>
+      <p>{{ data.description }}</p>
+    </article>
+
+    <div class="technologies">
+      <h3>Principais tecnologias</h3>
+      <ul>
+        {% for technology in data.technologies %}
+        <li><a target="_blank" href="{{ technology.url }}">{{ technology.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+{% endblock content %}

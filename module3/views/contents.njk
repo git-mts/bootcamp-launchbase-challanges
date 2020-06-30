@@ -1,0 +1,46 @@
+{% extends "layout.njk" %}
+{% block content %}
+  <section class="content">
+
+    <h1>Conteudos</h1>
+
+    <div class="cards">
+
+      {% for course in courses %}
+      <div class="card" id="{{ course.id }}">
+
+        <div class="card__logo-container">
+          <img src="{{ course.logo_url }}" alt="">
+        </div>
+
+        <div class="card__content">
+          <h2>{{ course.title }}</h2>
+          <p>
+            {{ course.description }}
+          </p>
+        </div>
+
+        <div class="card__info">
+          <p>{{ course.modules }}</p>
+          <p class="card__price"><span>{{ course.price }}</span></p>
+        </div>
+
+      </div>
+      {% endfor %}
+      
+    </div>
+  </section>
+
+  <div class="modal-overlay">
+    <div class="modal">
+      <div class="close-modal">
+        <i class="material-icons">close</i>
+      </div>
+
+      <iframe frameborder="0"></iframe>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+{% endblock content %}
